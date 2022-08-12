@@ -16,6 +16,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button
 } from 'react-native';
 
 import {
@@ -29,6 +30,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Avatar, Badge, withBadge } from 'react-native-elements'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -55,6 +57,57 @@ const Section = ({ children, title }): Node => {
     </View>
   );
 };
+
+const storeData = async (value) => {
+  try {
+    await AsyncStorage.setItem('@storage_Key', value)
+  } catch (e) {
+    // saving error
+  }
+}
+
+const storeDataObj = async (value) => {
+  try {
+    const jsonValue = JSON.stringify(value)
+    await AsyncStorage.setItem('@storage_Key', jsonValue)
+  } catch (e) {
+    // saving error
+  }
+}
+
+
+const getData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('@storage_Key')
+    if (value !== null) {
+      console.log('se obtuvo: ', value)
+      // value previously stored
+    }
+  } catch (e) {
+    // error reading value
+  }
+}
+
+
+const getDataObj = async () => {
+  try {
+    const jsonValue = await AsyncStorage.getItem('@storage_Key')
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch (e) {
+    // error reading value
+  }
+}
+
+const deleteData = async () => {
+  try {
+    await AsyncStorage.removeItem('@storage_Key')
+  } catch (e) {
+    // remove error
+  }
+
+  console.log('💎Done.')
+}
+
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -99,7 +152,15 @@ const App: () => Node = () => {
             }}
             size="large"
           />
-
+          <Button
+            onPress={() => storeData('Mac')}
+            title="Save Storage--" />
+          <Button
+            onPress={() => getData()}
+            title="Read Storage--" />
+          <Button
+            onPress={() => deleteData()}
+            title="delete Storage--" />
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>
