@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -78,6 +80,8 @@ const App: () => Node = () => {
           </Section>
           <Text>
             <Icon name="rocket" size={30} color="#900" />
+            <FontAwesome5 name="coins" size={14} color="#EABE3F" />
+            <MaterialCommunityIcons name="logout" size={24} color="#002A8C" />
           </Text>
           <Section title="See Your Changes">
             <ReloadInstructions />
