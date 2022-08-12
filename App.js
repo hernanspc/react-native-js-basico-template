@@ -28,6 +28,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { Avatar, Badge, withBadge } from 'react-native-elements'
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -80,9 +81,25 @@ const App: () => Node = () => {
           </Section>
           <Text>
             <Icon name="rocket" size={30} color="#900" />
+          </Text>
+          <Text>
             <FontAwesome5 name="coins" size={14} color="#EABE3F" />
+          </Text>
+          <Text>
             <MaterialCommunityIcons name="logout" size={24} color="#002A8C" />
           </Text>
+          <Badge status="success" />
+          <Badge status="error" />
+          <Badge status="primary" />
+          <Badge status="warning" />
+          <Avatar
+            rounded
+            source={{
+              uri: 'https://randomuser.me/api/portraits/men/41.jpg',
+            }}
+            size="large"
+          />
+
           <Section title="See Your Changes">
             <ReloadInstructions />
           </Section>
