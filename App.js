@@ -165,7 +165,7 @@ const App: () => Node = () => {
           title="delete Storage--" />
         {/* <LearnMoreLinks /> */}
         <Lottie
-          source={require('./src/assets/lotties/searching.json')}
+          source={require('./src/assets/lotties/nofound.json')}
           autoPlay
           loop
         />
