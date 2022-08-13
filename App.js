@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import type { Node } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -26,12 +25,16 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Avatar, Badge, withBadge } from 'react-native-elements'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Lottie from 'lottie-react-native';
+import { FlashList } from '@shopify/flash-list';
+import { tweets } from './src/mock/tweets'
+import TweetCard from './src/components/TweetCard'
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -76,7 +79,6 @@ const storeDataObj = async (value) => {
   }
 }
 
-
 const getData = async () => {
   try {
     const value = await AsyncStorage.getItem('@storage_Key')
@@ -88,7 +90,6 @@ const getData = async () => {
     // error reading value
   }
 }
-
 
 const getDataObj = async () => {
   try {
@@ -109,8 +110,18 @@ const deleteData = async () => {
   console.log('💎Done.')
 }
 
+const MyList = () => {
+  return (
+    <FlashList
+      data={tweets}
+      contentContainerStyle={{ backgroundColor: 'aliceblue' }}
+      renderItem={({ item }) => <TweetCard {...item} />}
+      estimatedItemSize={200}
+    />
+  )
+}
 
-const App: () => Node = () => {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -118,59 +129,36 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView
-      style={backgroundStyle}
-    >
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <
+      // style={backgroundStyle}
+      >
+      {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
 
-      <Header />
+      {/* <Avatar
+        rounded
+        source={{
+          uri: 'https://randomuser.me/api/portraits/men/41.jpg',
+        }}
+        size="large"
+      />
+      <Button
+        onPress={() => storeData('Mac')}
+        title="Save Storage--" />
+      <Button
+        onPress={() => getData()}
+        title="Read Storage--" />
+      <Button
+        onPress={() => deleteData()}
+        title="delete Storage--" /> */}
+      <MyList />
 
-      <View
-        style={{
-          backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        }}>
-        <Section title="Step One">
-          Edit <Text style={styles.highlight}>App.js</Text> to change this
-          screen and then come back to see your edits.
-        </Section>
-        <Text>
-          <Icon name="rocket" size={30} color="#900" />
-        </Text>
-        <Text>
-          <FontAwesome5 name="coins" size={14} color="#EABE3F" />
-        </Text>
-        <Text>
-          <MaterialCommunityIcons name="logout" size={24} color="#002A8C" />
-        </Text>
-        <Badge status="success" />
-        <Badge status="error" />
-        <Badge status="primary" />
-        <Badge status="warning" />
+      {/* <Lottie
+        source={require('./src/assets/lotties/nofound.json')}
+        autoPlay
+        loop
+      /> */}
 
-        <Avatar
-          rounded
-          source={{
-            uri: 'https://randomuser.me/api/portraits/men/41.jpg',
-          }}
-          size="large"
-        />
-        <Button
-          onPress={() => storeData('Mac')}
-          title="Save Storage--" />
-        <Button
-          onPress={() => getData()}
-          title="Read Storage--" />
-        <Button
-          onPress={() => deleteData()}
-          title="delete Storage--" />
-        {/* <LearnMoreLinks /> */}
-        <Lottie
-          source={require('./src/assets/lotties/nofound.json')}
-          autoPlay
-          loop
-        />
-      </View>
-    </SafeAreaView>
+    </>
   );
 };
 
