@@ -35,6 +35,7 @@ import Lottie from 'lottie-react-native';
 import { FlashList } from '@shopify/flash-list';
 import { tweets } from './src/mock/tweets'
 import TweetCard from './src/components/TweetCard'
+import Animated, { useSharedValue } from "react-native-reanimated";
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
