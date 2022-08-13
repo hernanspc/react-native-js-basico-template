@@ -31,6 +31,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { Avatar, Badge, withBadge } from 'react-native-elements'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Lottie from 'lottie-react-native';
 
 const Section = ({ children, title }): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -117,62 +118,58 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView
+      style={backgroundStyle}
+    >
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
 
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Text>
-            <Icon name="rocket" size={30} color="#900" />
-          </Text>
-          <Text>
-            <FontAwesome5 name="coins" size={14} color="#EABE3F" />
-          </Text>
-          <Text>
-            <MaterialCommunityIcons name="logout" size={24} color="#002A8C" />
-          </Text>
-          <Badge status="success" />
-          <Badge status="error" />
-          <Badge status="primary" />
-          <Badge status="warning" />
-          <Avatar
-            rounded
-            source={{
-              uri: 'https://randomuser.me/api/portraits/men/41.jpg',
-            }}
-            size="large"
-          />
-          <Button
-            onPress={() => storeData('Mac')}
-            title="Save Storage--" />
-          <Button
-            onPress={() => getData()}
-            title="Read Storage--" />
-          <Button
-            onPress={() => deleteData()}
-            title="delete Storage--" />
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+      <Header />
+
+      <View
+        style={{
+          backgroundColor: isDarkMode ? Colors.black : Colors.white,
+        }}>
+        <Section title="Step One">
+          Edit <Text style={styles.highlight}>App.js</Text> to change this
+          screen and then come back to see your edits.
+        </Section>
+        <Text>
+          <Icon name="rocket" size={30} color="#900" />
+        </Text>
+        <Text>
+          <FontAwesome5 name="coins" size={14} color="#EABE3F" />
+        </Text>
+        <Text>
+          <MaterialCommunityIcons name="logout" size={24} color="#002A8C" />
+        </Text>
+        <Badge status="success" />
+        <Badge status="error" />
+        <Badge status="primary" />
+        <Badge status="warning" />
+
+        <Avatar
+          rounded
+          source={{
+            uri: 'https://randomuser.me/api/portraits/men/41.jpg',
+          }}
+          size="large"
+        />
+        <Button
+          onPress={() => storeData('Mac')}
+          title="Save Storage--" />
+        <Button
+          onPress={() => getData()}
+          title="Read Storage--" />
+        <Button
+          onPress={() => deleteData()}
+          title="delete Storage--" />
+        {/* <LearnMoreLinks /> */}
+        <Lottie
+          source={require('./src/assets/lotties/searching.json')}
+          autoPlay
+          loop
+        />
+      </View>
     </SafeAreaView>
   );
 };
