@@ -111,7 +111,19 @@ const deleteData = async () => {
   console.log('💎Done.')
 }
 
+const Item = ({ item }) => {
+  const myValue = useSharedValue(0);
+  useEffect(() => {
+    // Reset value when id changes (view was recycled for another item)
+    myValue.value = 0;
+  }, [item.id, myValue]);
+  // return <Animated.FlashList />;
+  return <TweetCard {...item} />
+};
+
 const MyList = () => {
+  const scrollY = React.useRef(new Animated.Value(0)).current;
+  // return <FlashList renderItem={Item} estimatedItemSize={100} />;
   return (
     <FlashList
       data={tweets}

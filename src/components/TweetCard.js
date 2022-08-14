@@ -25,6 +25,14 @@ export default TweetCard
 
 const styles = StyleSheet.create({
     singleItem: {
+        // height: 120,
+        // width: '100%',
+        // flexDirection: 'row',
+        // borderBottomWidth: 1,
+        // borderBottomColor: '#e6e6e6',
+        // paddingTop: 16,
+        // marginTop: 16,
+
         margin: 8,
         padding: 8,
         minHeight: 44,
