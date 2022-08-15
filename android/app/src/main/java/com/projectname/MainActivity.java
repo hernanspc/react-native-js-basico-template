@@ -1,4 +1,4 @@
-package com.hernanpormachi.template;
+package com.projectname;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
