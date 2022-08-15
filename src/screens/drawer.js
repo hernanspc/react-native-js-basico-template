@@ -37,8 +37,8 @@ const Drawer = () => (
         </ImageBackground>
         <ScrollView>
             <View style={styles.itemContainer}>
-                <DrawerItem iconName="chess-king" text="Finance Pro" pro />
-                <DrawerItem iconName="account" text="Account" />
+                <DrawerItem iconName="chess-king" text="Finance Pro" />
+                <DrawerItem iconName="account" text="Account" pro />
                 <DrawerItem iconName="chart-timeline-variant" text="Data Usage" />
                 <DrawerItem iconName="qrcode-scan" text="Scan QR Code" />
                 <View style={styles.line} />

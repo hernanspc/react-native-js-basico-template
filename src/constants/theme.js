@@ -6,7 +6,7 @@ export const COLORS = {
     // primary: '#633974',  // 99, 57, 116
     primary: "#00A8E0",
     // lightPurple: '#EBDEF0',
-    lightPurple: '#A5F0F6',
+    lightPurple: '#A2E3FF',
     grey: '#585656',
     lightGrey: '#DCDADD',
     white: '#FFFFFF',
