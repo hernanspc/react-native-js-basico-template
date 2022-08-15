@@ -29,11 +29,12 @@ const Drawer = () => (
                 <View style={styles.line} />
                 <DrawerItem iconName="bell-ring" text="Notification" notification />
                 <DrawerItem iconName="shield-link-variant" text="Privacy Policy" />
+
                 <DrawerItem iconName="cog" text="Settings" />
             </View>
         </ScrollView>
         <View style={styles.bottomContainer}>
-            <Text style={styles.appName}>Finance Management</Text>
+            <Text style={styles.appName}>Remesas Management</Text>
             <Text style={styles.versionText}>Version 1.0.1</Text>
         </View>
     </View>
