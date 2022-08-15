@@ -66,7 +66,7 @@ const StackBasic = () => {
             <Stack.Screen
                 name="Home" component={HomeScreen}
                 options={{
-                    title: "HOME",
+                    title: "Inicio",
                     headerLeft: () => (
                         <Icon.Button
                             name="ios-menu"
