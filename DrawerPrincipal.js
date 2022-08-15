@@ -6,7 +6,9 @@ import {
   Alert,
   SafeAreaView,
   StyleSheet,
+  StatusBar
 } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import {
   createDrawerNavigator,
@@ -15,6 +17,9 @@ import {
 import CustomDrawerContent from "./src/screens/drawer";
 
 import Home from "./src/screens/home";
+
+//Stack
+import StackBasic from "./src/stacks/StackBasic"
 
 const Drawer = createDrawerNavigator();
 
@@ -33,10 +38,15 @@ const MyDrawer = () => {
 
   return (
     <>
+      <StatusBar
+        translucent
+        barStyle="light-content"
+        backgroundColor="transparent"
+      />
       <NavigationContainer>
         <Drawer.Navigator
-          // screenOptions={{ headerShown: false }}
-          screenOptions={{ headerShown: true }}
+          screenOptions={{ headerShown: false }}
+          // screenOptions={{ headerShown: true }}
           useLegacyImplementation
           drawerContent={(props) => (
             <CustomDrawerContent
@@ -55,7 +65,7 @@ const MyDrawer = () => {
                 color: "white",
               }
             }}
-            component={Home}
+            component={StackBasic}
           />
         </Drawer.Navigator>
       </NavigationContainer>
