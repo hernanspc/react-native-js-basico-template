@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Switch } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { COLORS, FONTWEIGHT } from "../constants/theme";
@@ -10,8 +10,18 @@ const DrawerItem = (props) => {
     const [isEnable, setIsEnable] = useState(false);
     const toggleSwitch = () => setIsEnable((state) => !state);
 
+    useEffect(() => {
+        if (isEnable) {
+            console.log('Check habilitado')
+        } else {
+            console.log('Check apagado')
+        }
+
+    }, [isEnable])
+
+
     return (
-        <TouchableOpacity disabled={notification} onPress={() => { }}>
+        <TouchableOpacity disabled={notification} onPress={{}}>
             <View style={styles.container}>
                 <View style={styles.row}>
                     <View style={[styles.iconContainer, { backgroundColor: pro ? COLORS.primary : COLORS.lightPurple }]}>

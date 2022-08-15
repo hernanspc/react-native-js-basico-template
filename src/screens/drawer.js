@@ -3,13 +3,28 @@ import { Image, ImageBackground, View, Text, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
 import DrawerItem from '../components/drawerItem';
+// import { Avatar } from '@rneui/themed';
+import { Avatar } from 'react-native-elements';
 
 const Drawer = () => (
     <View style={styles.container}>
         <ImageBackground source={require('../assets/drawer/finance.jpeg')}>
             <View style={styles.topContainer}>
                 <View style={styles.topDetails}>
-                    <Image style={styles.profile} source={require('../assets/drawer/profile.jpeg')} />
+                    {/* <Image style={styles.profile} source={require('../assets/drawer/profile.jpeg')} /> */}
+                    <Avatar
+                        size={64}
+                        rounded
+                        style={styles.profile}
+                        source={{ uri: "https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" }}
+                    >
+                        <Avatar.Accessory
+                            onPress={() => {
+                                console.log('Accessory')
+                            }}
+                            size={23}
+                        />
+                    </Avatar>
                     <View>
                         <Text style={styles.name}>Jenna Madelynn</Text>
                         <View style={styles.row}>
@@ -29,7 +44,6 @@ const Drawer = () => (
                 <View style={styles.line} />
                 <DrawerItem iconName="bell-ring" text="Notification" notification />
                 <DrawerItem iconName="shield-link-variant" text="Privacy Policy" />
-
                 <DrawerItem iconName="cog" text="Settings" />
             </View>
         </ScrollView>
