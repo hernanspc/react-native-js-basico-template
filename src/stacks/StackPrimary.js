@@ -68,13 +68,17 @@ const StackPrimary = () => {
                 options={{
                     title: "Inicio",
                     headerLeft: () => (
-                        <Icon.Button
-                            name="ios-menu"
-                            size={25}
-                            backgroundColor="#00A8E0"
-                            color="#FFF"
-                            onPress={() => navigation.openDrawer()}
-                        />
+                        <View style={{
+                            paddingLeft: 8,
+                        }}>
+                            <Icon.Button
+                                name="ios-menu"
+                                size={25}
+                                backgroundColor="#00A8E0"
+                                color="#FFF"
+                                onPress={() => navigation.openDrawer()}
+                            />
+                        </View>
                     ),
                 }}
             />

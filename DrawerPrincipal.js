@@ -62,10 +62,10 @@ const MyDrawer = () => {
           <Drawer.Screen
             name="Home"
             options={{
-              title: "Primero ",
+              title: "Primary",
               headerTitleStyle: {
                 fontWeight: "bold",
-                color: "white",
+                // color: "white",
               },
               drawerIcon: (config) => (
                 <View style={{

@@ -59,12 +59,12 @@ const styles = StyleSheet.create({
     },
     appName: {
         color: COLORS.grey,
-        fontSize: SIZES.h3,
+        fontSize: SIZES.h4,
         fontWeight: FONTWEIGHT.bold,
     },
     versionText: {
         color: COLORS.grey,
-        fontSize: SIZES.h4,
+        fontSize: SIZES.h5,
         fontWeight: FONTWEIGHT.weight500,
     },
 });
