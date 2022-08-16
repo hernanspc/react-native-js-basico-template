@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     line: {
-        backgroundColor: COLORS.lightGrey,
+        // backgroundColor: COLORS.lightGrey,
+        backgroundColor: '#DCDADD',
         height: 2,
         marginHorizontal: 15,
         marginVertical: 20,

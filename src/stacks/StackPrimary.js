@@ -50,7 +50,7 @@ function SettingsScreen({ navigation }) {
 
 const Stack = createStackNavigator();
 
-const StackBasic = () => {
+const StackPrimary = () => {
     const navigation = useNavigation();
 
     return (
@@ -84,4 +84,4 @@ const StackBasic = () => {
         </Stack.Navigator>
     );
 }
-export default StackBasic;
+export default StackPrimary;

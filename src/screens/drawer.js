@@ -5,8 +5,11 @@ import styles from "./styles";
 import DrawerItem from '../components/drawerItem';
 // import { Avatar } from '@rneui/themed';
 import { Avatar } from 'react-native-elements';
+import {
+    DrawerItemList
+} from "@react-navigation/drawer";
 
-const Drawer = () => (
+const Drawer = (props) => (
     <View style={styles.container}>
         <ImageBackground source={require('../assets/drawer/finance.jpeg')}>
             <View style={styles.topContainer}>
@@ -16,7 +19,8 @@ const Drawer = () => (
                         size={64}
                         rounded
                         style={styles.profile}
-                        source={{ uri: "https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" }}
+                        // source={{ uri: "https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" }}
+                        source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU" }}
                     >
                         <Avatar.Accessory
                             onPress={() => {
@@ -26,7 +30,7 @@ const Drawer = () => (
                         />
                     </Avatar>
                     <View>
-                        <Text style={styles.name}>Jenna Madelynn</Text>
+                        <Text style={styles.name}>Martin Geoffrey</Text>
                         <View style={styles.row}>
                             <Icon name="map-marker" size={15} style={styles.icon} />
                             <Text style={styles.locationText}>New York, US</Text>
@@ -36,6 +40,7 @@ const Drawer = () => (
             </View>
         </ImageBackground>
         <ScrollView>
+            <DrawerItemList {...props} />
             <View style={styles.itemContainer}>
                 <DrawerItem iconName="chess-king" text="Finance Pro" />
                 <DrawerItem iconName="account" text="Account" pro />

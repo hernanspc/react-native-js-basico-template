@@ -19,7 +19,10 @@ import CustomDrawerContent from "./src/screens/drawer";
 import Home from "./src/screens/home";
 
 //Stack
-import StackBasic from "./src/stacks/StackBasic"
+import StackPrimary from "./src/stacks/StackPrimary";
+import StackSencondary from "./src/stacks/StackSecondary";
+
+import MaterialIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Drawer = createDrawerNavigator();
 
@@ -59,13 +62,52 @@ const MyDrawer = () => {
           <Drawer.Screen
             name="Home"
             options={{
-              title: "asa ",
+              title: "Primero ",
               headerTitleStyle: {
                 fontWeight: "bold",
                 color: "white",
-              }
+              },
+              drawerIcon: (config) => (
+                <View style={{
+                  backgroundColor: "#A2E3FF",
+                  // marginRight: 20,
+                  padding: 8,
+                  borderRadius: 10,
+                }}>
+                  <MaterialIcons
+                    name="chess-king"
+                    size={20}
+                    color="#0D85FB"
+                  />
+                </View>
+              ),
             }}
-            component={StackBasic}
+            component={StackPrimary}
+          />
+          <Drawer.Screen
+            name="Second"
+            options={{
+              title: "Secondary ",
+              headerTitleStyle: {
+                fontWeight: "bold",
+                color: "white",
+              },
+              drawerIcon: (config) => (
+                <View style={{
+                  backgroundColor: "#A2E3FF",
+                  // marginRight: 20,
+                  padding: 8,
+                  borderRadius: 10,
+                }}>
+                  <MaterialIcons
+                    name="chart-timeline-variant"
+                    size={20}
+                    color="#0D85FB"
+                  />
+                </View>
+              ),
+            }}
+            component={StackSencondary}
           />
         </Drawer.Navigator>
       </NavigationContainer>
