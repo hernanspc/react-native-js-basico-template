@@ -1,3 +1,2 @@
 # react-native-js-basico-template!
-
-![Simulator Screen Shot - iPhone 13 - 2022-08-12 at 17 42 01](https://user-images.githubusercontent.com/58519791/184453671-869428ac-41af-48a2-9529-e4eb9eac532d.png)
+<img width="720" alt="template" src="https://user-images.githubusercontent.com/58519791/184911385-3f1b4b0e-6a84-49cf-a72d-c6584326ab62.png">
