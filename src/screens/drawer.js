@@ -8,10 +8,14 @@ import { Avatar } from 'react-native-elements';
 import {
     DrawerItemList
 } from "@react-navigation/drawer";
+import { Switch } from "native-base";
 
 const Drawer = (props) => (
     <View style={styles.container}>
-        <ImageBackground source={require('../assets/drawer/finance.jpeg')}>
+        <ImageBackground
+            // source={require('../assets/drawer/finance.jpeg')}
+            source={require('../assets/background/costa_verde.jpg')}
+        >
             <View style={styles.topContainer}>
                 <View style={styles.topDetails}>
                     {/* <Image style={styles.profile} source={require('../assets/drawer/profile.jpeg')} /> */}
@@ -41,7 +45,7 @@ const Drawer = (props) => (
         </ImageBackground>
         <ScrollView>
             <DrawerItemList {...props} />
-            <View style={styles.itemContainer}>
+            {/* <View style={styles.itemContainer}>
                 <DrawerItem iconName="chess-king" text="Finance Pro" />
                 <DrawerItem iconName="account" text="Account" pro />
                 <DrawerItem iconName="chart-timeline-variant" text="Data Usage" />
@@ -50,7 +54,7 @@ const Drawer = (props) => (
                 <DrawerItem iconName="bell-ring" text="Notification" notification />
                 <DrawerItem iconName="shield-link-variant" text="Privacy Policy" />
                 <DrawerItem iconName="cog" text="Settings" />
-            </View>
+            </View> */}
         </ScrollView>
         <View style={styles.bottomContainer}>
             <Text style={styles.appName}>Remesas Management</Text>

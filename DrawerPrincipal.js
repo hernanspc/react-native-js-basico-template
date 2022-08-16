@@ -48,7 +48,13 @@ const MyDrawer = () => {
       />
       <NavigationContainer>
         <Drawer.Navigator
-          screenOptions={{ headerShown: false }}
+          screenOptions={{
+            headerShown: false
+            , drawerStyle: {
+              backgroundColor: '#eee',
+              width: '80%',
+            },
+          }}
           // screenOptions={{ headerShown: true }}
           useLegacyImplementation
           drawerContent={(props) => (

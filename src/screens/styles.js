@@ -6,8 +6,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     topContainer: {
-        backgroundColor: 'rgba(0, 168, 224, 0.8)',
+        // backgroundColor: 'rgba(0, 168, 224, 0.8)',
         // backgroundColor: 'rgba(99, 57, 116, 0.9)',
+        // backgroundColor: 'rgba(255, 222, 173, 0.9)',
+        // backgroundColor: 'rgba(135, 206, 250, 0.9)',
         height: SIZES.height / 5,
         justifyContent: 'flex-end',
         padding: 15,
